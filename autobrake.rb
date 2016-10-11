@@ -32,9 +32,9 @@ volumes.each do |volume|
 
     label = (feature_tracks.length > 1) ? "Filename for #{track}: " : "Filename: "
     default_name = (feature_tracks.length > 1) ? "#{volume}_#{num}" : volume
-    cli.ask(label) { |q| q.default = default_name.titleize }
 
     idx += 1
+    cli.ask(label) { |q| q.default = default_name.titleize }
   end
 
   feature_tracks.each_with_index do |track, idx|
