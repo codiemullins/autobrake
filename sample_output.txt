@@ -1,0 +1,128 @@
+{
+  :device => '/Volumes/THE_NOTEBOOK',
+  :title => 'unknown',
+  :vmg_id => 'DVDVIDEO-VMG',
+  :provider_id => '',
+  :track => [    {
+      :ix => 1,
+      :length => 1705.286,
+      :vts_id => 'DVDVIDEO-VTS',
+    },
+    {
+      :ix => 2,
+      :length => 74.300,
+      :vts_id => 'DVDVIDEO-VTS',
+    },
+    {
+      :ix => 3,
+      :length => 382.166,
+      :vts_id => 'DVDVIDEO-VTS',
+    },
+    {
+      :ix => 4,
+      :length => 157.300,
+      :vts_id => 'DVDVIDEO-VTS',
+    },
+    {
+      :ix => 5,
+      :length => 26.143,
+      :vts_id => 'DVDVIDEO-VTS',
+    },
+    {
+      :ix => 6,
+      :length => 54.266,
+      :vts_id => 'DVDVIDEO-VTS',
+    },
+    {
+      :ix => 7,
+      :length => 154.233,
+      :vts_id => 'DVDVIDEO-VTS',
+    },
+    {
+      :ix => 8,
+      :length => 135.033,
+      :vts_id => 'DVDVIDEO-VTS',
+    },
+    {
+      :ix => 9,
+      :length => 133.153,
+      :vts_id => 'DVDVIDEO-VTS',
+    },
+    {
+      :ix => 10,
+      :length => 80.310,
+      :vts_id => 'DVDVIDEO-VTS',
+    },
+    {
+      :ix => 11,
+      :length => 38.233,
+      :vts_id => 'DVDVIDEO-VTS',
+    },
+    {
+      :ix => 12,
+      :length => 278.286,
+      :vts_id => 'DVDVIDEO-VTS',
+    },
+    {
+      :ix => 13,
+      :length => 201.243,
+      :vts_id => 'DVDVIDEO-VTS',
+    },
+    {
+      :ix => 14,
+      :length => 139.320,
+      :vts_id => 'DVDVIDEO-VTS',
+    },
+    {
+      :ix => 15,
+      :length => 7421.243,
+      :vts_id => 'DVDVIDEO-VTS',
+    },
+    {
+      :ix => 16,
+      :length => 699.166,
+      :vts_id => 'DVDVIDEO-VTS',
+    },
+    {
+      :ix => 17,
+      :length => 397.276,
+      :vts_id => 'DVDVIDEO-VTS',
+    },
+    {
+      :ix => 18,
+      :length => 693.020,
+      :vts_id => 'DVDVIDEO-VTS',
+    },
+    {
+      :ix => 19,
+      :length => 247.066,
+      :vts_id => 'DVDVIDEO-VTS',
+    },
+    {
+      :ix => 20,
+      :length => 217.143,
+      :vts_id => 'DVDVIDEO-VTS',
+    },
+    {
+      :ix => 21,
+      :length => 18.000,
+      :vts_id => 'DVDVIDEO-VTS',
+    },
+    {
+      :ix => 22,
+      :length => 0.176,
+      :vts_id => 'DVDVIDEO-VTS',
+    },
+    {
+      :ix => 23,
+      :length => 11.000,
+      :vts_id => 'DVDVIDEO-VTS',
+    },
+    {
+      :ix => 24,
+      :length => 8.000,
+      :vts_id => 'DVDVIDEO-VTS',
+    },
+  ],
+  :longest_track => 15,
+}
