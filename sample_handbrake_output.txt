@@ -1,0 +1,245 @@
+[07:58:59] hb_init: starting libhb thread
+HandBrake 0.10.5 (2016021100) - Darwin x86_64 - https://handbrake.fr
+4 CPUs detected
+Opening /dev/disk2...
+[07:58:59] CPU: Intel(R) Core(TM) i5-3210M CPU @ 2.50GHz
+[07:58:59]  - Intel microarchitecture Ivy Bridge
+[07:58:59]  - logical processor count: 4
+[07:58:59] OpenCL device #1: Intel HD Graphics 4000
+[07:58:59]  - OpenCL version: 1.2
+[07:58:59]  - driver version: 1.2(Jan 18 2016 23:17:46)
+[07:58:59]  - device type:    GPU
+[07:58:59]  - supported:      no
+[07:58:59] hb_scan: path=/dev/disk2, title_index=1
+libbluray/bdnav/index_parse.c:162: indx_parse(): error opening /Volumes/THE_CONSTANT_GARDENER/BDMV/index.bdmv
+libbluray/bdnav/index_parse.c:162: indx_parse(): error opening /Volumes/THE_CONSTANT_GARDENER/BDMV/BACKUP/index.bdmv
+libbluray/bluray.c:2182: nav_get_title_list(/Volumes/THE_CONSTANT_GARDENER) failed
+[07:58:59] bd: not a bd - trying as a stream/file instead
+libdvdnav: Using dvdnav version 5.0.1
+libdvdnav: DVD disk reports itself with Region mask 0x00fe0000. Regions: 1
+
+libdvdread: Attempting to retrieve all CSS keys
+libdvdread: This can take a _long_ time, please be patient
+
+libdvdread: Get key for /VIDEO_TS/VIDEO_TS.VOB at 0x00000154
+libdvdread: Elapsed time 0
+libdvdread: Get key for /VIDEO_TS/VTS_01_0.VOB at 0x000004f0
+libdvdread: Elapsed time 0
+libdvdread: Get key for /VIDEO_TS/VTS_01_1.VOB at 0x00006906
+libdvdread: Elapsed time 0
+libdvdread: Get key for /VIDEO_TS/VTS_02_0.VOB at 0x002d7319
+libdvdread: Elapsed time 0
+libdvdread: Get key for /VIDEO_TS/VTS_02_1.VOB at 0x002d731d
+libdvdread: Elapsed time 1
+libdvdread: Get key for /VIDEO_TS/VTS_03_0.VOB at 0x002ef029
+libdvdread: Elapsed time 0
+libdvdread: Get key for /VIDEO_TS/VTS_03_1.VOB at 0x002ef02d
+libdvdread: Elapsed time 0
+libdvdread: Get key for /VIDEO_TS/VTS_04_0.VOB at 0x0031e438
+libdvdread: Elapsed time 0
+libdvdread: Get key for /VIDEO_TS/VTS_04_1.VOB at 0x0031e43c
+libdvdread: Elapsed time 0
+libdvdread: Get key for /VIDEO_TS/VTS_05_0.VOB at 0x00349ed5
+libdvdread: Elapsed time 0
+libdvdread: Get key for /VIDEO_TS/VTS_05_1.VOB at 0x00349ed9
+libdvdread: Elapsed time 0
+libdvdread: Get key for /VIDEO_TS/VTS_06_0.VOB at 0x00375712
+libdvdread: Elapsed time 0
+libdvdread: Get key for /VIDEO_TS/VTS_06_1.VOB at 0x00375716
+libdvdread: Elapsed time 0
+libdvdread: Get key for /VIDEO_TS/VTS_07_0.VOB at 0x0039a26c
+libdvdread: Elapsed time 0
+libdvdread: Get key for /VIDEO_TS/VTS_07_1.VOB at 0x0039a270
+libdvdread: Elapsed time 1
+libdvdread: Get key for /VIDEO_TS/VTS_08_0.VOB at 0x003cdd91
+libdvdread: Elapsed time 0
+libdvdread: Get key for /VIDEO_TS/VTS_08_1.VOB at 0x003cdd95
+libdvdread: Elapsed time 0
+libdvdread: Get key for /VIDEO_TS/VTS_09_0.VOB at 0x003cff94
+libdvdread: Elapsed time 0
+libdvdread: Get key for /VIDEO_TS/VTS_09_1.VOB at 0x003cff98
+libdvdread: Elapsed time 0
+libdvdread: Found 9 VTS's
+libdvdread: Elapsed time 2
+[07:59:05] scan: DVD has 10 title(s)
+[07:59:05] scan: scanning title 1
+[07:59:05] scan: opening IFO for VTS 1
+[07:59:06] scan: duration is 02:08:32 (7712567 ms)
+[07:59:06] pgc_id: 1, pgn: 1: pgc: 0x101e15610
+[07:59:06] scan: vts=1, ttn=1, cells=0->21, blocks=0->2951645, 2951646 blocks
+[07:59:06] scan: checking audio 1
+[07:59:06] scan: id=0x80bd, lang=English (AC3), 3cc=eng ext=0
+[07:59:06] scan: checking audio 2
+[07:59:06] scan: id=0x81bd, lang=Francais (AC3), 3cc=fra ext=0
+[07:59:06] scan: checking subtitle 1
+[07:59:06] scan: id=0x20bd, lang=English, 3cc=eng ext=0
+[07:59:06] scan: checking subtitle 2
+[07:59:06] scan: id=0x21bd, lang=Espanol, 3cc=spa ext=0
+[07:59:06] scan: checking subtitle 3
+[07:59:06] scan: id=0x22bd, lang=Francais, 3cc=fra ext=0
+[07:59:06] scan: title 1 has 21 chapters
+[07:59:06] scan: chap 1 c=0->0, b=0->108288 (108289), 304066 ms
+[07:59:06] scan: chap 2 c=1->1, b=108289->227469 (119181), 313934 ms
+[07:59:06] scan: chap 3 c=2->2, b=227470->309893 (82424), 224000 ms
+[07:59:06] scan: chap 4 c=3->3, b=309894->505895 (196002), 480667 ms
+[07:59:06] scan: chap 5 c=4->4, b=505896->601395 (95500), 258667 ms
+[07:59:06] scan: chap 6 c=5->5, b=601396->737499 (136104), 371166 ms
+[07:59:06] scan: chap 7 c=6->6, b=737500->834180 (96681), 250000 ms
+[07:59:06] scan: chap 8 c=7->7, b=834181->952286 (118106), 318667 ms
+[07:59:06] scan: chap 9 c=8->8, b=952287->1126133 (173847), 463834 ms
+[07:59:06] scan: chap 10 c=9->9, b=1126134->1284687 (158554), 405166 ms
+[07:59:06] scan: chap 11 c=10->10, b=1284688->1485506 (200819), 527700 ms
+[07:59:06] scan: chap 12 c=11->11, b=1485507->1705386 (219880), 579667 ms
+[07:59:06] scan: chap 13 c=12->12, b=1705387->1955656 (250270), 624500 ms
+[07:59:06] scan: chap 14 c=13->14, b=1955657->2114405 (158749), 415000 ms
+[07:59:06] scan: chap 15 c=15->15, b=2114406->2248157 (133752), 328500 ms
+[07:59:06] scan: chap 16 c=16->16, b=2248158->2412233 (164076), 398166 ms
+[07:59:06] scan: chap 17 c=17->17, b=2412234->2595533 (183300), 435867 ms
+[07:59:06] scan: chap 18 c=18->18, b=2595534->2739190 (143657), 356500 ms
+[07:59:06] scan: chap 19 c=19->19, b=2739191->2783251 (44061), 125533 ms
+[07:59:06] scan: chap 20 c=20->20, b=2783252->2951640 (168389), 529967 ms
+[07:59:06] scan: chap 21 c=21->21, b=2951641->2951645 (5), 1000 ms
+[07:59:06] scan: aspect = 1.77778
+[07:59:06] scan: decoding previews for title 1
+libdvdnav: DVD disk reports itself with Region mask 0x00fe0000. Regions: 1
+Scanning title 1 of 1, preview 1, 0.00 %[07:59:07] scan: title angle(s) 1
+Scanning title 1 of 1, preview 1, 10.00 %[ac3 @ 0x10201bc00] frame sync error
+[ac3 @ 0x10201c000] frame sync error
+[ac3 @ 0x103809c00] frame sync error
+[07:59:07] scan: audio 0x80bd: ac3, rate=48000Hz, bitrate=448000 English (AC3) (5.1 ch)
+[ac3 @ 0x104002000] frame sync error
+[07:59:07] scan: audio 0x81bd: ac3, rate=48000Hz, bitrate=384000 Francais (AC3) (5.1 ch)
+Scanning title 1 of 1, preview 10, 100.00 %[07:59:10] scan: 10 previews, 720x480, 23.976 fps, autocrop = 6/14/0/0, aspect 16:9, PAR 32:27
+[07:59:10] libhb: scan thread found 1 valid title(s)
++ title 1:
+  + vts 1, ttn 1, cells 0->21 (2951646 blocks)
+  + duration: 02:08:32
+  + size: 720x480, pixel aspect: 32/27, display aspect: 1.78, 23.976 fps
+  + autocrop: 6/14/0/0
+  + support opencl: no
+  + support hwd: not built-in
+  + chapters:
+    + 1: cells 0->0, 108289 blocks, duration 00:05:04
+    + 2: cells 1->1, 119181 blocks, duration 00:05:14
+    + 3: cells 2->2, 82424 blocks, duration 00:03:44
+    + 4: cells 3->3, 196002 blocks, duration 00:08:01
+    + 5: cells 4->4, 95500 blocks, duration 00:04:19
+    + 6: cells 5->5, 136104 blocks, duration 00:06:11
+    + 7: cells 6->6, 96681 blocks, duration 00:04:10
+    + 8: cells 7->7, 118106 blocks, duration 00:05:19
+    + 9: cells 8->8, 173847 blocks, duration 00:07:44
+    + 10: cells 9->9, 158554 blocks, duration 00:06:45
+    + 11: cells 10->10, 200819 blocks, duration 00:08:48
+    + 12: cells 11->11, 219880 blocks, duration 00:09:40
+    + 13: cells 12->12, 250270 blocks, duration 00:10:25
+    + 14: cells 13->14, 158749 blocks, duration 00:06:55
+    + 15: cells 15->15, 133752 blocks, duration 00:05:29
+    + 16: cells 16->16, 164076 blocks, duration 00:06:38
+    + 17: cells 17->17, 183300 blocks, duration 00:07:16
+    + 18: cells 18->18, 143657 blocks, duration 00:05:57
+    + 19: cells 19->19, 44061 blocks, duration 00:02:06
+    + 20: cells 20->20, 168389 blocks, duration 00:08:50
+    + 21: cells 21->21, 5 blocks, duration 00:00:01
+  + audio tracks:
+    + 1, English (AC3) (5.1 ch) (iso639-2: eng), 48000Hz, 448000bps
+    + 2, Francais (AC3) (5.1 ch) (iso639-2: fra), 48000Hz, 384000bps
+  + subtitle tracks:
+    + 1, English (iso639-2: eng) (Bitmap)(VOBSUB)
+    + 2, Espanol (iso639-2: spa) (Bitmap)(VOBSUB)
+    + 3, Francais (iso639-2: fra) (Bitmap)(VOBSUB)
++ Using preset: High
+Warning: Could not find subtitle track '4', skipped
+Warning: Could not find subtitle track '5', skipped
+Warning: Could not find subtitle track '6', skipped
+[07:59:10] 1 job(s) to process
+[07:59:10] starting job
+[07:59:10] work: mixdown not specified, track 1 setting mixdown Dolby Pro Logic II
+[07:59:10] work: bitrate not specified, track 1 setting bitrate 160 Kbps
+[07:59:10] sync: expecting 184916 video frames
+[07:59:10] job configuration:
+[07:59:10]  * source
+[07:59:10]    + /dev/disk2
+[07:59:10]    + title 1, chapter(s) 1 to 21
+[07:59:10]  * destination
+[07:59:10]    + /Users/codiemullins/Desktop/THE_CONSTANT_GARDENER.m4v
+[07:59:10]    + container: MPEG-4 (libavformat)
+[07:59:10]  * video track
+[07:59:10]    + decoder: mpeg2video
+[07:59:10]      + bitrate 9800 kbps
+[07:59:10]    + filters
+[07:59:10]      + Framerate Shaper (0:27000000:1126125)
+[07:59:10]        + frame rate: same as source (around 23.976 fps)
+[07:59:10]      + Crop and Scale (720:388:6:14:0:0)
+[07:59:10]        + source: 720 * 480, crop (6/14/0/0): 720 * 460, scale: 720 * 388
+[07:59:10]    + dimensions: 720 * 388, mod 0
+[07:59:10]    + encoder: MPEG-4 (libavcodec)
+[07:59:10]      + bitrate: 1000 kbps, pass: 0
+[07:59:10]  * subtitle track 1, English (track 1, id 0x20bd) Picture [VOBSUB] -> Passthrough
+[07:59:10]  * subtitle track 2, Espanol (track 2, id 0x21bd) Picture [VOBSUB] -> Passthrough
+[07:59:10]  * subtitle track 3, Francais (track 3, id 0x22bd) Picture [VOBSUB] -> Passthrough
+[07:59:10]  * audio track 1
+[07:59:10]    + decoder: English (AC3) (5.1 ch) (track 1, id 0x80bd)
+[07:59:10]      + bitrate: 448 kbps, samplerate: 48000 Hz
+[07:59:10]    + mixdown: Dolby Pro Logic II
+[07:59:10]    + encoder: AAC (Apple AudioToolbox)
+[07:59:10]      + bitrate: 160 kbps, samplerate: 48000 Hz
+libdvdnav: Using dvdnav version 5.0.1
+libdvdnav: DVD disk reports itself with Region mask 0x00fe0000. Regions: 1
+
+libdvdread: Attempting to retrieve all CSS keys
+libdvdread: This can take a _long_ time, please be patient
+
+libdvdread: Get key for /VIDEO_TS/VIDEO_TS.VOB at 0x00000154
+libdvdread: Elapsed time 0
+libdvdread: Get key for /VIDEO_TS/VTS_01_0.VOB at 0x000004f0
+libdvdread: Elapsed time 0
+libdvdread: Get key for /VIDEO_TS/VTS_01_1.VOB at 0x00006906
+libdvdread: Elapsed time 0
+libdvdread: Get key for /VIDEO_TS/VTS_02_0.VOB at 0x002d7319
+libdvdread: Elapsed time 0
+libdvdread: Get key for /VIDEO_TS/VTS_02_1.VOB at 0x002d731d
+libdvdread: Elapsed time 0
+libdvdread: Get key for /VIDEO_TS/VTS_03_0.VOB at 0x002ef029
+libdvdread: Elapsed time 0
+libdvdread: Get key for /VIDEO_TS/VTS_03_1.VOB at 0x002ef02d
+libdvdread: Elapsed time 0
+libdvdread: Get key for /VIDEO_TS/VTS_04_0.VOB at 0x0031e438
+libdvdread: Elapsed time 0
+libdvdread: Get key for /VIDEO_TS/VTS_04_1.VOB at 0x0031e43c
+libdvdread: Elapsed time 0
+libdvdread: Get key for /VIDEO_TS/VTS_05_0.VOB at 0x00349ed5
+libdvdread: Elapsed time 0
+libdvdread: Get key for /VIDEO_TS/VTS_05_1.VOB at 0x00349ed9
+libdvdread: Elapsed time 0
+libdvdread: Get key for /VIDEO_TS/VTS_06_0.VOB at 0x00375712
+libdvdread: Elapsed time 0
+libdvdread: Get key for /VIDEO_TS/VTS_06_1.VOB at 0x00375716
+libdvdread: Elapsed time 0
+libdvdread: Get key for /VIDEO_TS/VTS_07_0.VOB at 0x0039a26c
+libdvdread: Elapsed time 0
+libdvdread: Get key for /VIDEO_TS/VTS_07_1.VOB at 0x0039a270
+libdvdread: Elapsed time 0
+libdvdread: Get key for /VIDEO_TS/VTS_08_0.VOB at 0x003cdd91
+libdvdread: Elapsed time 0
+libdvdread: Get key for /VIDEO_TS/VTS_08_1.VOB at 0x003cdd95
+libdvdread: Elapsed time 0
+libdvdread: Get key for /VIDEO_TS/VTS_09_0.VOB at 0x003cff94
+libdvdread: Elapsed time 0
+libdvdread: Get key for /VIDEO_TS/VTS_09_1.VOB at 0x003cff98
+libdvdread: Elapsed time 0
+libdvdread: Found 9 VTS's
+libdvdread: Elapsed time 0
+libdvdnav: DVD disk reports itself with Region mask 0x00fe0000. Regions: 1
+[07:59:14] encavcodecInit: MPEG-4 ASP encoder
+[07:59:15] reader: first SCR 146 id 0xe0 DTS 22254
+[07:59:15] mpeg2video: "Chapter 1" (1) at frame 0 time 3003
+[07:59:15] sync: first pts is 3003
+[07:59:16] 2.402400s: Video -> Film
+[07:59:22] 34.968266s: Film -> Video
+[07:59:22] 35.268566s: Video -> Film
+[08:00:44] mpeg2video: "Chapter 2" (2) at frame 7316 time 27405378
+[08:00:51] 329.762756s: Film -> Video
+[08:00:51] 329.896210s: Video -> Film
+[08:02:13] mpeg2video: "Chapter 3" (3) at frame 14851 time 55686130
+[08:02:24] 661.594238s: Film -> Video
+[08:02:24] 661.727722s: Video -> Film
