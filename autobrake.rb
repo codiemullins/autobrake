@@ -4,6 +4,7 @@ require 'awesome_print'
 require 'twilio-ruby'
 require 'highline'
 require 'active_support/core_ext/string'
+require 'active_support/core_ext/array'
 
 require './lib/tracks'
 require './lib/track'
@@ -27,20 +28,24 @@ volumes.each do |volume|
   feature_tracks = tracks.select { |t| t.length > 1 * 60 * 60 }
 
   idx = 1
-  target_names = feature_tracks.map do |track|
+  named_tracks = feature_tracks.map do |track|
     num = "%02d" % idx
 
     label = (feature_tracks.length > 1) ? "Filename for #{track}: " : "Filename: "
     default_name = (feature_tracks.length > 1) ? "#{volume}_#{num}" : volume
 
     idx += 1
-    cli.ask(label) { |q| q.default = default_name.titleize }
+    name = cli.ask(label) { |q| q.default = default_name.titleize }
+    {
+      track: track,
+      name: name
+    }
   end
 
-  feature_tracks.each_with_index do |track, idx|
-    num = "%02d" % (idx + 1)
+  named_tracks.each do |named_track|
+    track = named_track[:track]
+    name = named_track[:name]
 
-    name = target_names[idx]
     filename = "#{name}.m4v"
     temp_file = "#{TEMP_DIR}/#{filename}"
     target_file = "#{TARGET_DIR}/#{filename}"
@@ -53,11 +58,12 @@ volumes.each do |volume|
 
     puts `mv "#{temp_file}" "#{target_file}"`
 
-    `diskutil eject /Volumes/#{volume}`
-
-    SMS.new(SMS_NUMBER, "Movie #{name} is ripped and ready to play on Plex!").send!
-    puts "Sent SMS to #{SMS_NUMBER}"
   end
+
+  `diskutil eject /Volumes/#{volume}`
+
+  SMS.new(SMS_NUMBER, "#{target_names.to_sentence} complete. Now ready to play on Plex!").send!
+  puts "Sent SMS to #{SMS_NUMBER}"
 
 
 end
