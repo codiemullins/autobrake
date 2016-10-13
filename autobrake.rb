@@ -31,7 +31,7 @@ volumes.each do |volume|
   named_tracks = feature_tracks.map do |track|
     num = "%02d" % idx
 
-    label = (feature_tracks.length > 1) ? "Filename for #{track}: " : "Filename: "
+    label = (feature_tracks.length > 1) ? "Filename for #{num}: " : "Filename: "
     default_name = (feature_tracks.length > 1) ? "#{volume}_#{num}" : volume
 
     idx += 1
@@ -62,7 +62,8 @@ volumes.each do |volume|
 
   `diskutil eject /Volumes/#{volume}`
 
-  SMS.new(SMS_NUMBER, "#{target_names.to_sentence} complete. Now ready to play on Plex!").send!
+  names = named_tracks.map { |nt| nt[:name] }
+  SMS.new(SMS_NUMBER, "#{names.to_sentence} complete. Now ready to play on Plex!").send!
   puts "Sent SMS to #{SMS_NUMBER}"
 
 
