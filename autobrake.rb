@@ -65,11 +65,13 @@ volumes.each do |volume|
     temp_file = "#{TEMP_DIR}/#{filename}"
     target_file = "#{TARGET_DIR}/#{filename}"
 
-    puts `/usr/local/bin/HandBrakeCLI -Z High Profile \
-      -i "/Volumes/#{volume}" \
-      -o "#{temp_file}" \
-      -s "1,2,3,4,5,6" \
-      -t #{track.number}`
+    CMD.new "HandBrake", <<-SHELL
+      /usr/local/bin/HandBrakeCLI -Z High Profile \
+        -i "/Volumes/#{volume}" \
+        -o "#{temp_file}" \
+        -s "1,2,3,4,5,6" \
+        -t #{track.number}
+    SHELL
 
     puts `mv "#{temp_file}" "#{target_file}"`
 
