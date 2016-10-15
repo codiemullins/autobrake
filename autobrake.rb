@@ -5,28 +5,27 @@ require 'twilio-ruby'
 require 'highline'
 require 'active_support/core_ext/string'
 require 'active_support/core_ext/array'
+require 'dotenv'
 
+# Setup environment
+Dotenv.load
+cli = HighLine.new
+
+VOLUMES_TO_SKIP = ENV['VOLUMES_TO_SKIP'].split(":")
+SMS_NUMBER = ENV['SMS_NUMBER']
+TEMP_DIR = ENV['TEMP_DIR']
+TARGET_DIR = ENV['TARGET_DIR']
+
+# Require repo specific ruby files
 require './lib/tracks'
 require './lib/track'
 require './lib/sms'
-
-VOLUMES_TO_SKIP = [
-  "Macintosh HD",
-  "Recovery HD",
-  "Media"
-]
 
 def volumes
   return @_volumes if @_volumes
   @_volumes = `ls /Volumes`.split("\n").
     reject { |volume| VOLUMES_TO_SKIP.include?(volume)  }
 end
-
-SMS_NUMBER = '918-894-0623'
-TEMP_DIR   = '/Users/codiemullins/Desktop'
-TARGET_DIR = '/Volumes/Media/Movies'
-
-cli = HighLine.new
 
 volumes.each do |volume|
   dvd_info = eval(`lsdvd -Or "/Volumes/#{volume}"`)
@@ -81,6 +80,5 @@ volumes.each do |volume|
   names = named_tracks.map { |nt| nt[:name] }
   SMS.new(SMS_NUMBER, "#{names.to_sentence} complete. Now ready to play on Plex!").send!
   puts "Sent SMS to #{SMS_NUMBER}"
-
 
 end

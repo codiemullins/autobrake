@@ -9,6 +9,7 @@ GEM
       tzinfo (~> 1.1)
     awesome_print (1.7.0)
     builder (3.2.2)
+    dotenv (2.1.1)
     highline (1.7.8)
     i18n (0.7.0)
     json (1.8.3)
@@ -30,6 +31,7 @@ PLATFORMS
 DEPENDENCIES
   activesupport
   awesome_print
+  dotenv
   highline
   thor
   twilio-ruby
