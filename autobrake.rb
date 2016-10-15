@@ -20,6 +20,7 @@ TARGET_DIR = ENV['TARGET_DIR']
 require './lib/tracks'
 require './lib/track'
 require './lib/sms'
+require './lib/cmd'
 
 def volumes
   return @_volumes if @_volumes
