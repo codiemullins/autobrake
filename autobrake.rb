@@ -10,14 +10,21 @@ require './lib/tracks'
 require './lib/track'
 require './lib/sms'
 
+VOLUMES_TO_SKIP = [
+  "Macintosh HD",
+  "Recovery HD",
+  "Media"
+]
+
 def volumes
   return @_volumes if @_volumes
-  @_volumes = `ls /Volumes`.split("\n").reject { |volume| volume == "Macintosh HD" }
+  @_volumes = `ls /Volumes`.split("\n").
+    reject { |volume| VOLUMES_TO_SKIP.include?(volume)  }
 end
 
 SMS_NUMBER = '918-894-0623'
 TEMP_DIR   = '/Users/codiemullins/Desktop'
-TARGET_DIR = '/Users/codiemullins/Desktop/Movies'
+TARGET_DIR = '/Volumes/Media/Movies'
 
 cli = HighLine.new
 
@@ -26,6 +33,15 @@ volumes.each do |volume|
 
   tracks = Tracks.new dvd_info[:track]
   feature_tracks = tracks.select { |t| t.length > 1 * 60 * 60 }
+
+  if feature_tracks.length > 15
+    cli.say "This DVD has too many tracks to automatically select one..."
+    track_known = cli.ask("Do you know which track to use?") { |q| q.default = "n" }
+    exit unless track_known.downcase == "y"
+
+    chosen_track = cli.ask "Which track to rip?", Integer
+    feature_tracks = feature_tracks.select { |track| track.number == chosen_track }
+  end
 
   idx = 1
   named_tracks = feature_tracks.map do |track|
