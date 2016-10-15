@@ -91,7 +91,7 @@ volumes.each do |volume|
 
   end
 
-  `diskutil eject /Volumes/#{volume}`
+  `diskutil eject "/Volumes/#{volume}"`
 
   names = named_tracks.map { |nt| nt[:name] }
   SMS.new(SMS_NUMBER, "#{names.to_sentence} complete. Now ready to play on Plex!").send!
