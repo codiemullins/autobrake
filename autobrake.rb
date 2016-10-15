@@ -21,6 +21,7 @@ require './lib/tracks'
 require './lib/track'
 require './lib/sms'
 require './lib/cmd'
+require './lib/directory_ensure'
 
 def volumes
   return @_volumes if @_volumes
@@ -66,7 +67,7 @@ volumes.each do |volume|
     temp_file = "#{TEMP_DIR}/#{filename}"
     target_file = "#{TARGET_DIR}/#{filename}"
 
-    CMD.new "HandBrake", <<-SHELL
+    handbrake_cmd = CMD.new <<-SHELL
       /usr/local/bin/HandBrakeCLI -Z High Profile \
         -i "/Volumes/#{volume}" \
         -o "#{temp_file}" \
@@ -74,7 +75,19 @@ volumes.each do |volume|
         -t #{track.number}
     SHELL
 
+    path = "#{ENV['PWD']}/tmp/handbrake.log"
+    DirectoryEnsure.new path
+
+    File.open(path, "w") do |file|
+      handbrake_cmd.run do |_, ts, line|
+        file.puts "#{ts.strftime "%Y-%m-%d %H:%M:%S"} - #{line}"
+        puts line
+      end
+    end
+
     puts `mv "#{temp_file}" "#{target_file}"`
+    backup_path = path.gsub ".log", "#{filename.downcase.gsub(' ', '_')}.log"
+    puts `mv "#{path}" "#{backup_path}"`
 
   end
 
