@@ -86,7 +86,7 @@ volumes.each do |volume|
     end
 
     puts `mv "#{temp_file}" "#{target_file}"`
-    backup_path = path.gsub ".log", "#{filename.downcase.gsub(' ', '_')}.log"
+    backup_path = path.gsub ".log", "-#{filename.downcase.gsub(' ', '_')}.log"
     puts `mv "#{path}" "#{backup_path}"`
 
   end
