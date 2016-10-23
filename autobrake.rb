@@ -41,6 +41,8 @@ Volumes.new.list(VOLUMES_TO_SKIP).each do |volume|
     }
   end
 
+  start_time = Time.now
+
   named_tracks.each do |named_track|
     track = named_track[:track]
     name = named_track[:name]
@@ -77,7 +79,9 @@ Volumes.new.list(VOLUMES_TO_SKIP).each do |volume|
   `diskutil eject "/Volumes/#{volume}"`
 
   names = named_tracks.map { |nt| nt[:name] }
-  SMS.new(SMS_NUMBER, "#{names.to_sentence} complete. Now ready to play on Plex!").send!
+  complete_time = Time.now
+  minutes = ((complete_time - start_time) / 60).round
+  SMS.new(SMS_NUMBER, "#{names.to_sentence} complete. Completed in #{minutes} minutes.").send!
   puts "Sent SMS to #{SMS_NUMBER}"
 
 end
