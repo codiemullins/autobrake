@@ -9,13 +9,20 @@ GEM
       tzinfo (~> 1.1)
     awesome_print (1.7.0)
     builder (3.2.2)
+    coderay (1.1.1)
     dotenv (2.1.1)
     highline (1.7.8)
     i18n (0.7.0)
     json (1.8.3)
     jwt (1.5.6)
+    method_source (0.8.2)
     minitest (5.9.1)
     multi_json (1.12.1)
+    pry (0.10.4)
+      coderay (~> 1.1.0)
+      method_source (~> 0.8.1)
+      slop (~> 3.4)
+    slop (3.6.0)
     thor (0.19.1)
     thread_safe (0.3.5)
     twilio-ruby (4.13.0)
@@ -33,6 +40,7 @@ DEPENDENCIES
   awesome_print
   dotenv
   highline
+  pry
   thor
   twilio-ruby
 
