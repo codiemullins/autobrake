@@ -7,13 +7,15 @@ require 'dotenv'
 
 # Setup environment
 Dotenv.load
-cli = HighLine.new
+
+CLI = HighLine.new
 
 VOLUMES_TO_SKIP = ENV['VOLUMES_TO_SKIP'].split(":")
 SMS_NUMBER = ENV['SMS_NUMBER']
 TEMP_DIR = ENV['TEMP_DIR']
 TARGET_DIR = ENV['TARGET_DIR']
 MIN_TRACK_LENGTH = ENV['MIN_TRACK_LENGTH'].nil? ? 60 : ENV['MIN_TRACK_LENGTH'].to_i
+MAX_TRACK_LENGTH = ENV['MAX_TRACK_LENGTH'].nil? ? 900 : ENV['MAX_TRACK_LENGTH'].to_i
 
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)

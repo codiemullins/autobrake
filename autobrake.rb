@@ -9,14 +9,20 @@ Volumes.new.list(VOLUMES_TO_SKIP).each do |volume|
   dvd_info = eval(`lsdvd -Or "/Volumes/#{volume}"`)
 
   tracks = Tracks.new dvd_info[:track]
-  feature_tracks = tracks.select { |t| t.length > 1 * 60 * 60 }
+  feature_tracks = tracks.select { |t| t.length > (1 * 60 * MIN_TRACK_LENGTH) && t.length < (1 * 60 * MAX_TRACK_LENGTH) }
 
-  if feature_tracks.length > 15
-    cli.say "This DVD has too many tracks to automatically select one..."
-    track_known = cli.ask("Do you know which track to use?") { |q| q.default = "n" }
+  CLI.say "Found #{feature_tracks.count} that are longer than #{MIN_TRACK_LENGTH} and less than #{MAX_TRACK_LENGTH} minutes..."
+
+  case feature_tracks.length
+  when 0
+    puts "No tracks found, exiting..."
+    exit
+  when proc { |n| n > 15 }
+    CLI.say "This DVD has too many tracks to automatically select one..."
+    track_known = CLI.ask("Do you know which track to use?") { |q| q.default = "n" }
     exit unless track_known.downcase == "y"
 
-    chosen_track = cli.ask "Which track to rip?", Integer
+    chosen_track = CLI.ask "Which track to rip?", Integer
     feature_tracks = feature_tracks.select { |track| track.number == chosen_track }
   end
 
@@ -28,7 +34,7 @@ Volumes.new.list(VOLUMES_TO_SKIP).each do |volume|
     default_name = (feature_tracks.length > 1) ? "#{volume}_#{num}" : volume
 
     idx += 1
-    name = cli.ask(label) { |q| q.default = default_name.titleize }
+    name = CLI.ask(label) { |q| q.default = default_name.titleize }
     {
       track: track,
       name: name
@@ -61,6 +67,7 @@ Volumes.new.list(VOLUMES_TO_SKIP).each do |volume|
       end
     end
 
+    DirectoryEnsure.new target_file
     puts `mv "#{temp_file}" "#{target_file}"`
     backup_path = path.gsub ".log", "-#{filename.downcase.gsub(' ', '_')}.log"
     puts `mv "#{path}" "#{backup_path}"`
