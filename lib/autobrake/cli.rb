@@ -1,7 +1,7 @@
 class CLI < Thor
   desc "movie", "rip DVD with movie settings"
   def movie
-    Ripper.new.rip
+    Ripper.new(target_dir: "#{TARGET_DIR}/Movies").rip
   end
 
   option :season, aliases: :s, default: 1
@@ -14,7 +14,7 @@ class CLI < Thor
       start_num: options['episode_start'],
       season: options['season'],
       name: name,
-      target_dir: "#{TARGET_DIR}/#{name}",
+      target_dir: "#{TARGET_DIR}/Shows/#{name}",
       min_length: 5,
       max_length: 90
     }
