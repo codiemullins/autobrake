@@ -11,7 +11,7 @@ class CLI < Thor
     file_prefix = "#{name} - S#{options['season']}E"
     opts = {
       file_prefix: file_prefix,
-      start_num: options['episode_start'],
+      start_num: options['episode_start'].to_i,
       season: options['season'],
       name: name,
       target_dir: "#{TARGET_DIR}/Shows/#{name}",

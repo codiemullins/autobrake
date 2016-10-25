@@ -45,22 +45,30 @@ class Ripper
     @_name_tracks = chosen_tracks.map do |track|
       num = "%02d" % idx
       if file_prefix
-        name = "#{file_prefix}#{num}"
+        question = "Do you want to rip Track #{track.number} (#{track.length_to_s})? "
+        rip_track = ask(question) { |q| q.default = "y"}.downcase == "y"
+        if rip_track
+          name = "#{file_prefix}#{num}"
+          idx += 1
+        else
+          nil
+        end
       else
         label = (chosen_tracks.length > 1) ? "Filename for #{num}: " : "Filename: "
         default_name = (chosen_tracks.length > 1) ? "#{volume}_#{num}" : volume
         name = ask(label) { |q| q.default = default_name.titleize }
+        idx += 1
       end
 
-      idx += 1
       {
         track: track,
         name: name
       }
-    end
+    end.compact
   end
 
   def rip_tracks
+    @start_time = Time.now
     name_tracks.each do |named_track|
       puts "Ripping Track #{named_track[:track].number}, #{named_track[:name]}..."
       RipTrack.new(named_track[:track], named_track[:name], volume, temp_dir, target_dir).rip
@@ -75,7 +83,7 @@ class Ripper
   def send_sms
     names = name_tracks.map { |nt| nt[:name] }
     complete_time = Time.now
-    minutes = ((complete_time - start_time) / 60).round
+    minutes = ((complete_time - @start_time) / 60).round
     SMS.new(SMS_NUMBER, "#{names.to_sentence} complete. Completed in #{minutes} minutes.").send!
     puts "Sent SMS to #{SMS_NUMBER}"
   end
