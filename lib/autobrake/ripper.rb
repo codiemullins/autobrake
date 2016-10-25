@@ -20,6 +20,8 @@ class Ripper
     send_sms
   end
 
+  private
+
   def choose_tracks
     return @_chosen_tracks if @_chosen_tracks
     case feature_tracks.length
