@@ -1,5 +1,3 @@
-require 'fileutils'
-
 class DirectoryEnsure
   def initialize path
     dirname = File.dirname(path)

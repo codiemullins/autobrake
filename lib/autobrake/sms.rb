@@ -1,5 +1,3 @@
-require 'twilio-ruby'
-
 class SMS
   ACCOUNT_SID = 'ACbd201a518748552770d3630365a805d2'
   AUTH_TOKEN  = 'c0f9e2755aafa6aa929d2b22f5e5e148'

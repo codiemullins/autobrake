@@ -1,5 +1,3 @@
-require './lib/track'
-
 class Tracks
   include Enumerable
 

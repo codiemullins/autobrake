@@ -1,5 +1,3 @@
-require 'open3'
-
 class CMD
   attr_reader :command
 
