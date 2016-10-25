@@ -20,8 +20,6 @@ class Ripper
     send_sms
   end
 
-  private
-
   def choose_tracks
     return @_chosen_tracks if @_chosen_tracks
     case feature_tracks.length
@@ -51,10 +49,10 @@ class Ripper
       else
         label = (chosen_tracks.length > 1) ? "Filename for #{num}: " : "Filename: "
         default_name = (chosen_tracks.length > 1) ? "#{volume}_#{num}" : volume
-
-        idx += 1
         name = ask(label) { |q| q.default = default_name.titleize }
       end
+
+      idx += 1
       {
         track: track,
         name: name
@@ -64,7 +62,9 @@ class Ripper
 
   def rip_tracks
     name_tracks.each do |named_track|
+      puts "Ripping Track #{named_track[:track].number}, #{named_track[:name]}..."
       RipTrack.new(named_track[:track], named_track[:name], volume, temp_dir, target_dir).rip
+      puts "Finished Ripping Track #{named_track[:track].number}, #{named_track[:name]}"
     end
   end
 

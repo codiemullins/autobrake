@@ -13,7 +13,6 @@ class RipTrack
   def rip
     execute_handbrake do |file, ts, line|
       file.puts "#{ts.strftime "%Y-%m-%d %H:%M:%S"} - #{line}"
-      puts line
     end
     move_target
     move_log
